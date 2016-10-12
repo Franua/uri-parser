@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Value;
+namespace UriParser\Domain\Value;
 
 /**
  * @method static UriSchemeValue ABSENT()

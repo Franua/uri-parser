@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Value;
+namespace UriParser\Domain\Value;
 
-use Domain\Value\Contract\ValueObjectInterface;
+use UriParser\Domain\Value\Contract\ValueObjectInterface;
 
 final class UriQueryValue implements ValueObjectInterface
 {

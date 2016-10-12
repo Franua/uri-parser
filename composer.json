@@ -9,8 +9,16 @@
       "email": "frol3000@gmail.com"
     }
   ],
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "UriParser\\": "src/"
+    }
+  },
   "require": {
     "phpunit/phpunit": "6.0.x-dev",
-    "php-di/php-di": "5.4.0"
+    "php-di/php-di": "5.4.0",
+    "twig/twig": "1.6.5",
+    "nikic/fast-route": "v1.0.1"
   }
 }

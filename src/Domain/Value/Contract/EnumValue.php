@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Value\Contract;
+namespace UriParser\Domain\Value\Contract;
 
 abstract class EnumValue extends SimpleValue
 {
