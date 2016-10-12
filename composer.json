@@ -10,6 +10,7 @@
     }
   ],
   "require": {
-    "phpunit/phpunit": "6.0.x-dev"
+    "phpunit/phpunit": "6.0.x-dev",
+    "php-di/php-di": "5.4.0"
   }
 }
