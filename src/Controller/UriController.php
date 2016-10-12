@@ -34,19 +34,11 @@ class UriController
         echo $this->twig->render('uri/index.twig');
     }
 
-    /**
-     * @param $uri
-     */
-    public function parse($uri)
+    public function parse()
     {
-        $uriInput = new UriInput($uri);
+        $uri = $_POST['uri'] ?? '';
+        $uriValue = $this->uriParser->parse(new UriInput($uri));
 
-        if (!$uriInput->isValid()) {
-            exit($this->twig->render('uri/error.twig', [
-                'errors' => $uriInput->getValidationErrors(),
-            ]));
-        }
-
-        echo $this->twig->render('uri/index.twig', ['Uri' => $this->uriParser->parse($uriInput)]);
+        echo $this->twig->render('uri/index.twig', ['Uri' => $uriValue]);
     }
 }

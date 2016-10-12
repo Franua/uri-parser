@@ -1,0 +1,32 @@
+<form method="post">
+    <input name="uri" type="text" title="URI" value="" />
+    <input type="submit" />
+</form>
+
+{% if Uri is defined %}
+    {% if Uri.isValid %}
+        <ul>
+            <li>URI: {{ Uri }}</li>
+            <li>Authority part:
+                <ul>
+                    <li>user: {{ Uri.getAuthority.getUser }}</li>
+                    <li>password: {{ Uri.getAuthority.getPassword }}</li>
+                    <li>host: {{ Uri.getAuthority.getHost }}</li>
+                    <li>port: {{ Uri.getAuthority.getPort ? Uri.getAuthority.getPort : '' }}</li>
+                </ul>
+            </li>
+            <li>Path: {{ Uri.getPath }}</li>
+            <li>Query string: {{ Uri.getQuery.getQuery }}</li>
+            <li>Query field-value pairs:
+                <ul>
+                    {% for field, value in Uri.getQuery.getValue %}
+                        <li>{{ field }} => {{ value }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>Fragment: {{ Uri.getFragment }}</li>
+        </ul>
+    {% else %}
+        <p>Given URI is malformed: {{ Uri }}</p>
+    {% endif %}
+{% endif %}

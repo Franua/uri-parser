@@ -25,7 +25,7 @@ The following commands are available:
 ```
 ./console uri-parse "URI string"`: displays the given URI parsed parts
 ```
-You can then run the web application using PHP's built-in server (but, unfortunately, templates are empty at the moment):
+You can then run the web application using PHP's built-in server:
 
 ```
 php -S 0.0.0.0:8000 -t web/
