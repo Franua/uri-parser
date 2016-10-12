@@ -1,0 +1,15 @@
+{
+  "name": "franua/uri-parser",
+  "description": "URI parser",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrii Frolikov",
+      "email": "frol3000@gmail.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "6.0.x-dev"
+  }
+}
