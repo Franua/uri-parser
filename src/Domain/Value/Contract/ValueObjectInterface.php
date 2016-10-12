@@ -2,9 +2,12 @@
 
 namespace UriParser\Domain\Value\Contract;
 
-interface ValueObjectInterface
-{
-    public function getValue();
+use UriParser\Domain\Contract\PrintableInterface;
 
-    public function __toString();
+interface ValueObjectInterface extends PrintableInterface
+{
+    /**
+     * @return mixed
+     */
+    public function getValue();
 }

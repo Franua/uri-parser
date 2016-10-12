@@ -6,7 +6,7 @@ $container = require __DIR__ . '/../app/bootstrap.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
     $r->addRoute('GET', '/', ['UriParser\Controller\UriController', 'index']);
-    $r->addRoute('POST', '/', ['Controller\UriController', 'parse']);
+    $r->addRoute('POST', '/', ['UriParser\Controller\UriController', 'parse']);
 });
 
 $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);

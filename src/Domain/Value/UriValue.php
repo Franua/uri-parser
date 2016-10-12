@@ -63,7 +63,7 @@ final class UriValue implements ValueObjectInterface
     }
 
     /**
-     * UriValue constructor.
+     * UriValue named constructor.
      * @param UriSchemeValue    $scheme
      * @param UriAuthorityValue $authority
      * @param string            $path
@@ -91,6 +91,7 @@ final class UriValue implements ValueObjectInterface
     }
 
     /**
+     * UriValue named constructor.
      * @param string $uri
      * @return UriValue
      */
@@ -115,6 +116,7 @@ final class UriValue implements ValueObjectInterface
     }
 
     /**
+     * UriValue named constructor.
      * @param string $uri
      * @return UriValue
      */
