@@ -7,10 +7,11 @@ abstract class EnumValue extends SimpleValue
     /**
      * Returns the value object when called statically:
      * MyEnum::SOME_VALUE(), given SOME_VALUE is a class constant.
-     * @param $name
+     * @param string $name
+     * @param        $arguments
      * @return static
      */
-    public static function __callStatic(string $name)
+    public static function __callStatic(string $name, $arguments)
     {
         $constant = sprintf('static::%s', $name);
 
@@ -41,11 +42,6 @@ abstract class EnumValue extends SimpleValue
 
         parent::__construct($value);
     }
-
-    /**
-     * @return string
-     */
-    abstract public function __toString() : string;
 
     /**
      * @return array

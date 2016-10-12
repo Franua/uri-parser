@@ -17,6 +17,8 @@ class UriParserService
      */
     public function parse(UriInput $uriInput) : UriValue
     {
-        return UriValue::fromString($uriInput);
+        return (!$uriInput->isValid())
+            ? UriValue::createMalformed($uriInput)
+            : UriValue::fromString((string) $uriInput);
     }
 }

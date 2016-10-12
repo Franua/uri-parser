@@ -6,6 +6,7 @@ use UriParser\Domain\Value\Contract\ValueObjectInterface;
 
 final class UriQueryValue implements ValueObjectInterface
 {
+    const PREFIX = '?';
     const DELIMITER_AMPERSAND = '&';
     const DELIMITER_SEMICOLON = ';';
     const DELIMITER_FIELD_VALUE_PAIR = '=';
@@ -14,11 +15,6 @@ final class UriQueryValue implements ValueObjectInterface
      * @var string
      */
     private $query;
-
-    /**
-     * @var string
-     */
-//    private $delimiter = self::DELIMITER_AMPERSAND;
 
     /**
      * UriQueryValue constructor.
@@ -42,43 +38,16 @@ final class UriQueryValue implements ValueObjectInterface
     /**
      * @return string
      */
-    public function __toString()
+    public function getQuery(): string
     {
         return $this->query;
     }
 
-//    /**
-//     * @return UriQueryValue
-//     */
-//    public function setDelimiterAmpersand() : self
-//    {
-//        $this->delimiter = self::DELIMITER_AMPERSAND;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * @return UriQueryValue
-//     */
-//    public function setDelimiterSemicolon() : self
-//    {
-//        $this->delimiter = self::DELIMITER_SEMICOLON;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * @param string $fieldValuePair
-//     * @return array
-//     */
-//    private function parseFieldValuePair(string $fieldValuePair, string $delimiter) : array
-//    {
-//        $fieldValueArr = explode($delimiter, $fieldValuePair, 2);
-//
-//        if (count($fieldValueArr) === 1) {
-//            array_push($fieldValueArr, null);
-//        }
-//
-//        return $fieldValueArr;
-//    }
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->query;
+    }
 }

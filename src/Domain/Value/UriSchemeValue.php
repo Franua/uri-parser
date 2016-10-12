@@ -2,6 +2,8 @@
 
 namespace UriParser\Domain\Value;
 
+use UriParser\Domain\Value\Contract\EnumValue;
+
 /**
  * @method static UriSchemeValue ABSENT()
  * @method static UriSchemeValue HTTP()
@@ -11,7 +13,7 @@ namespace UriParser\Domain\Value;
  * @method static UriSchemeValue FILE()
  * @method static UriSchemeValue DATA()
  */
-class UriSchemeValue
+class UriSchemeValue extends EnumValue
 {
     const ABSENT = '';
     const HTTP = 'http';
@@ -20,4 +22,12 @@ class UriSchemeValue
     const MAILTO = 'mailto';
     const FILE = 'file';
     const DATA = 'data';
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getValue();
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace UriParser\Domain\Value;
 
+use UriParser\Domain\Helper\StringHelper;
 use UriParser\Domain\Value\Contract\ValueObjectInterface;
 
 final class UriAuthorityValue implements ValueObjectInterface
@@ -57,16 +58,18 @@ final class UriAuthorityValue implements ValueObjectInterface
     {
         $authorityString = '';
 
-        if ($this->isNotEmpty($this->user)) {
+        if (!StringHelper::isNullOrEmptyString($this->user)) {
             $authorityString = $this->user;
-            if ($this->isNotEmpty($this->password)) {
+            if (!StringHelper::isNullOrEmptyString($this->password)) {
                 $authorityString .= UriValue::DELIMITER_COLON . $this->password;
             }
+
+            $authorityString .= self::DELIMITER_AT;
         }
 
         $authorityString .= $this->host;
         if ($authorityString !== '' && $this->port > 0 && $this->port <= self::MAX_PORT_NUMBER) {
-            $authorityString .= self::DELIMITER_AT . $this->port;
+            $authorityString .= UriValue::DELIMITER_COLON . $this->port;
         }
 
         return self::PREFIX . $authorityString;
@@ -78,15 +81,6 @@ final class UriAuthorityValue implements ValueObjectInterface
     public function __toString()
     {
         return $this->getValue();
-    }
-
-    /**
-     * @param $value
-     * @return bool
-     */
-    private function isNotEmpty($value) : bool
-    {
-        return !in_array($value, [null, '']);
     }
 
     /**
