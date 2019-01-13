@@ -40,7 +40,7 @@ The container is created in [app/bootstrap.php](app/bootstrap.php). The configur
 Both the web application and the CLI application require `app/bootstrap.php` to get the container:
 
 - the web application ([web/index.php](web/index.php)) uses [FastRoute](https://github.com/nikic/FastRoute) for routing, and then creates and invokes the controller using PHP-DI
-- the CLI application ([console](console)) uses [Silly](http://mnapoli.fr/silly/): Silly uses the container to create and invoke the commands
+- the CLI application ([console](console)) uses [Silly](https://github.com/mnapoli/silly): Silly uses the container to create and invoke the commands
 
 You will note that in both case, the controllers/commands are instantiated and invoked by PHP-DI: this is to benefit from dependency injection in those classes.
 
